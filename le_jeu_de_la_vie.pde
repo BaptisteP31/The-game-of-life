@@ -7,7 +7,8 @@ boolean [][] array = new boolean[DIV][DIV];
 void setup() {
   size(800, 800);
   background(255);
-  strokeWeight(.1);
+  stroke(200);
+  strokeWeight(1.5);
   
   randomArray();
   
