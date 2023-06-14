@@ -1,11 +1,11 @@
-int SIZE = 600;
+int SIZE = 800;
 int DIV = 40;
 int gen = 0;
 boolean running = false; 
 boolean [][] array = new boolean[DIV][DIV];
 
 void setup() {
-  size(600, 600);
+  size(800, 800);
   background(255);
   strokeWeight(.1);
   
@@ -58,16 +58,25 @@ void randomArray()
   }
 }
 
+
 int countNeighbors(int x, int y) {
   int count = 0;
   
+  // Parcourir les voisins de la cellule
   for (int i = -1; i <= 1; i++) {
     for (int j = -1; j <= 1; j++) {
-      int neighborX = (x + i + DIV) % DIV;  // Gestion des bords toriques
-      int neighborY = (y + j + DIV) % DIV;  // Gestion des bords toriques
+      if (i == 0 && j == 0) {
+        continue;  // Ignorer la cellule elle-même
+      }
       
-      if (!(i == 0 && j == 0) && array[neighborX][neighborY]) {
-        count++;
+      int neighborX = x + i;
+      int neighborY = y + j;
+      
+      // Vérifier si le voisin est dans les limites de la grille
+      if (neighborX >= 0 && neighborX < DIV && neighborY >= 0 && neighborY < DIV) {
+        if (array[neighborX][neighborY]) {
+          count++;
+        }
       }
     }
   }
