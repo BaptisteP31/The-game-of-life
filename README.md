@@ -1,6 +1,8 @@
 # The game of life
  Yet anoter guy coding the game of life, this time in java (processing)
 
+ ![](screenshot.png)
+
 ## How to run
 1. Install [processing](https://processing.org/download/)
 2. Clone this repo
